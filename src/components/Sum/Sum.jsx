@@ -5,9 +5,9 @@ import Title from '../Title/Title';
 import AboutImg from '../Image/AboutImg';
 import PortfolioContext from '../../context/context';
 
-const About = () => {
-  const { about } = useContext(PortfolioContext);
-  const { img, paragraphOne, paragraphTwo, paragraphThree, resume } = about;
+const sum = () => {
+  const { sum } = useContext(PortfolioContext);
+  const { img, paragraphOne, paragraphTwo, paragraphThree, resume } = sum;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -23,30 +23,23 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about">
+    <section id="sum">
       <Container>
-        <Title title="About Me" />
-        <Row className="about-wrapper">
-          <Col md={6} sm={12}>
-            <Fade bottom duration={1000} delay={600} distance="30px">
-              <div className="about-wrapper__image">
-                <AboutImg alt="profile picture" filename={img} />
-              </div>
-            </Fade>
-          </Col>
-          <Col md={6} sm={12}>
+        <Title title="Summative Reflection" />
+        <Row className="sum-wrapper">
+          <Col md={11} sm={12}>
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
-              <div className="about-wrapper__info">
-                <p className="about-wrapper__info-text">
+              <div className="sum-wrapper__info">
+                <p className="sum-wrapper__info-text">
                   {paragraphOne ||
-                    'My name is Michael Stephens, I am a third year Computer Science student at the University of Cinncinati.'}
+                    "Work in progress"}
                 </p>
-                <p className="about-wrapper__info-text">
+                <p className="sum-wrapper__info-text">
                   {paragraphTwo ||
-                    'Para 2'}
+                    ''}
                 </p>
-                <p className="about-wrapper__info-text">
-                  {paragraphThree || 'My email for contact is stephme@mail.uc.edu'}
+                <p className="sum-wrapper__info-text">
+                  {paragraphThree || ''}
                 </p>
                 {resume && (
                   <span className="d-flex mt-3">
@@ -69,4 +62,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default sum;

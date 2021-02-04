@@ -5,9 +5,9 @@ import Title from '../Title/Title';
 import AboutImg from '../Image/AboutImg';
 import PortfolioContext from '../../context/context';
 
-const About = () => {
-  const { about } = useContext(PortfolioContext);
-  const { img, paragraphOne, paragraphTwo, paragraphThree, resume } = about;
+const coop = () => {
+  const { coop } = useContext(PortfolioContext);
+  const { img, paragraphOne, paragraphTwo, paragraphThree, resume } = coop;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -23,30 +23,23 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about">
+    <section id="coop">
       <Container>
-        <Title title="About Me" />
-        <Row className="about-wrapper">
-          <Col md={6} sm={12}>
-            <Fade bottom duration={1000} delay={600} distance="30px">
-              <div className="about-wrapper__image">
-                <AboutImg alt="profile picture" filename={img} />
-              </div>
-            </Fade>
-          </Col>
-          <Col md={6} sm={12}>
+        <Title title="CO-OP EXPERIENCE" />
+        <Row className="coop-wrapper">
+          <Col md={11} sm={12}>
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
-              <div className="about-wrapper__info">
-                <p className="about-wrapper__info-text">
+              <div className="coop-wrapper__info">
+                <p className="coop-wrapper__info-text">
                   {paragraphOne ||
-                    'My name is Michael Stephens, I am a third year Computer Science student at the University of Cinncinati.'}
+                    "All of my CO-OP expieriences thus far have been through the University of Cinncinnati's EEP program. EEP stands for Experiential Exploration Program. Throughout the program I partook in various online courses."}
                 </p>
-                <p className="about-wrapper__info-text">
+                <p className="coop-wrapper__info-text">
                   {paragraphTwo ||
-                    'Para 2'}
+                    ''}
                 </p>
-                <p className="about-wrapper__info-text">
-                  {paragraphThree || 'My email for contact is stephme@mail.uc.edu'}
+                <p className="coop-wrapper__info-text">
+                  {paragraphThree || ''}
                 </p>
                 {resume && (
                   <span className="d-flex mt-3">
@@ -69,4 +62,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default coop;
